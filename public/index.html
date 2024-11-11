@@ -7,8 +7,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
     />
-    <title>DeepAR Web SDK - Face and body AR in the browser</title>
+    <title>Tryons - AR Tryon for Ecommerce</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   </head>
 
   <body>
@@ -25,7 +27,7 @@
         <img
           id="initial-loading-logo"
           style="max-width: 200px"
-          src="/images/crystal.png"
+          src="/images/icon.png"
           class="animate-bounce"
         />
         <div
@@ -40,11 +42,11 @@
         >
           <div id="loading-progress-bar"></div>
         </div>
-        <img
+        <!-- <img
           id="initial-loading-text"
           style="max-width: 140px; margin-top: 30px"
           src="/images/powered-by.svg"
-        />
+        /> -->
       </div>
     </div>
 
@@ -59,10 +61,10 @@
           <p>Please reload and allow camera access to use this app.</p>
           <a
             class="permission-denied-button"
-            href="https://www.deepar.ai/projects"
+            href="https://tfft.io/zeLvKDM"
             target="__blank"
           >
-            Discover more
+            Chat with us. 
           </a>
         </div>
       </div>
@@ -70,7 +72,9 @@
 
     <!-- AR screen -->
     <div id="ar-screen" style="display: none">
-      <canvas class="deepar" id="deepar-canvas"></canvas>
+      
+      <canvas class="deepar" id="deepar-canvas">
+      </canvas>
 
       <div class="carousel" id="carousel">
         <div class="carousel-center" id="carousel-center">
@@ -82,18 +86,16 @@
           </div>
         </div>
         <div class="carousel-slider">
-          <div class="slide">
-            <img class="responsive-img" src="thumbs/ray-ban-wayfarer.png" />
-          </div>
-          <div class="slide">
-            <img class="responsive-img" src="thumbs/viking.png" />
+          <!-- <div class="slide">
+            <img class="responsive-img" src="thumbs/rayban.png" />
           </div>
           <div class="slide">
             <img class="responsive-img" src="thumbs/makeup.png" />
+          </div> -->
+          <div class="slide">
+            <img class="responsive-img" src="thumbs/nike.png" />
           </div>
-          <!-- <div class="slide">
-            <img class="responsive-img" src="thumbs/makeup-split.png" />
-          </div>
+          <!--</div>
           <div class="slide">
             <img class="responsive-img" src="thumbs/flower_face.png" />
           </div>
@@ -130,6 +132,17 @@
         </div>
       </div>
     </div>
+    <!-- <div class="contact-us-container">
+      <div class="permission-denied-text" id="camera_denied">
+        <a
+          class="permission-denied-button"
+          href="https://tfft.io/zeLvKDM"
+          target="__blank"
+        >
+          Lets Talk!
+        </a>
+      </div>
+    </div> -->
 
     <script type="text/javascript" src="main.js"></script>
   </body>

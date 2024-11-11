@@ -20,9 +20,10 @@ console.log("Deepar version: " + deepar.version);
   // All the effects are in the public/effects folder.
   // Here we define the order of effect files.
   const effectList = [
-    "effects/ray-ban-wayfarer.deepar",
-    "effects/sunglass_filter.deepar",
-    "effects/shoe_tryon.deepar"
+    // "effects/sunglass_filter.deepar",
+    // "effects/MakeupLook.deepar",
+    // "effects/shoe_tryon.deepar",
+    "effects/shoe_3d.deepar"
   ];
 
   let deepAR = null;
@@ -39,7 +40,8 @@ console.log("Deepar version: " + deepar.version);
       rootPath: "./deepar-resources",
       additionalOptions:{
         cameraConfig:{
-            facingMode:"environment",
+            facingMode:"user",
+            //disableDefaultCamera: true
         },
       }
     });
@@ -65,12 +67,45 @@ console.log("Deepar version: " + deepar.version);
 
   window.effect = effectList[0];
 
+  async function turnVideo(facingTo) {
+    // const constraints = {
+    //   video: { facingMode:facingTo },
+    // };
+
+    var video = document.getElementById('ar-screen');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    
+    const cameraOption = {
+      mediaStreamConstraints: { facingMode:facingTo }
+  }
+
+   await deepAR.startCamera(cameraOption);
+  }
+
+
   const glassesCarousel = new Carousel("carousel");
   glassesCarousel.onChange = async (value) => {
     const loadingSpinner = document.getElementById("loading-spinner");
 
     if (window.effect !== effectList[value]) {
       loadingSpinner.style.display = "block";
+      
+      if(value == 2)
+      {
+        window.open("https://joysticklab.com/ar-shoe","_self");
+      }
+      // if(value == 2)
+      // {
+      //   turnVideo("environment");
+      // }
+
+      // else
+      // {
+      //   turnVideo("user");
+      // }
+
       await deepAR.switchEffect(effectList[value]);
       window.effect = effectList[value];
     }
