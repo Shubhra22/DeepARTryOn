@@ -40,7 +40,7 @@ console.log("Deepar version: " + deepar.version);
       rootPath: "./deepar-resources",
       additionalOptions:{
         cameraConfig:{
-            facingMode:"user",
+            facingMode:"environment",
             //disableDefaultCamera: true
         },
       }
