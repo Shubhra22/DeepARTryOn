@@ -20,10 +20,10 @@ console.log("Deepar version: " + deepar.version);
   // All the effects are in the public/effects folder.
   // Here we define the order of effect files.
   const effectList = [
-    // "effects/sunglass_filter.deepar",
+     "effects/shoe_tryon.deepar",
     // "effects/MakeupLook.deepar",
     // "effects/shoe_tryon.deepar",
-    "effects/shoe_3d.deepar"
+    //"effects/shoe_deca.deepar"
   ];
 
   let deepAR = null;
@@ -82,12 +82,15 @@ console.log("Deepar version: " + deepar.version);
   }
 
    await deepAR.startCamera(cameraOption);
+   await deepAR.switchEffect(effectList[value]);
   }
 
 
   const glassesCarousel = new Carousel("carousel");
   glassesCarousel.onChange = async (value) => {
     const loadingSpinner = document.getElementById("loading-spinner");
+
+
 
     if (window.effect !== effectList[value]) {
       loadingSpinner.style.display = "block";
@@ -108,7 +111,11 @@ console.log("Deepar version: " + deepar.version);
 
       await deepAR.switchEffect(effectList[value]);
       window.effect = effectList[value];
+
     }
+
+    console.log(window.effect)
+
     loadingSpinner.style.display = "none";
   };
 })();
